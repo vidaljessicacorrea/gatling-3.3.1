@@ -1,0 +1,9 @@
+VERSION,DOCS
+/3.0,/docs/current/general/simulation_setup#simulation-inject-closed
+/3.0,/docs/current/general/scenario#scenario-dowhile
+/3.0,/docs/current/session/feeder/#feeder-csv
+/3.0,/docs/current/session/feeder/#feeder-records
+/2.2,/docs/2.2/session/feeder/#feeder
+/2.2,/docs/2.2/http/http_check/#http-check-conditional
+/2.3,/docs/2.3/session/feeder#feeder
+/2.3,/docs/2.3/session/feeder#redis-feeder

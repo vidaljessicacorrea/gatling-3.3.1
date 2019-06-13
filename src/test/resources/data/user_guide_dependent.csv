@@ -1,0 +1,9 @@
+USER_GUIDE,VERSION,DOCS
+/whats_new/,/3.0,/docs/current/general/simulation_setup#simulation-inject-closed
+/whats_new/,/3.0,/docs/current/general/scenario#scenario-dowhile
+/whats_new/,/3.0,/docs/current/session/feeder/#feeder-csv
+/whats_new/,/3.0,/docs/current/session/feeder/#feeder-records
+/whats_new/,/2.2,/docs/2.2/session/feeder/#feeder
+/whats_new/,/2.2,/docs/2.2/http/http_check/#http-check-conditional
+/whats_new/,/2.3,/docs/2.3/session/feeder#feeder
+/whats_new/,/2.3,/docs/2.3/session/feeder#redis-feeder

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%-5level] %logger{15} - %msg%n%rEx</pattern>
+        </encoder>
+    </appender>
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file> SimulationLOG_File.log</file>
+        <append>false</append>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%-5level] %logger{15} - %msg%n%rEx</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="ConsoleLogger" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <logger name="FileLogger" additivity="false">
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <if condition='property("gatling.runMode").contains("debug")'>
+        <then>
+            <logger name="io.gatling.http.ahc" level="DEBUG"/>
+            <logger name="io.gatling.http.response" level="DEBUG"/>
+
+            <root level="DEBUG">
+                <appender-ref ref="CONSOLE"/>
+                <appender-ref ref="FILE" />
+            </root>
+        </then>
+        <else>
+            <if condition='property("gatling.runMode").contains("trace")'>
+                <then>
+                    <logger name="io.gatling.http.ahc" level="TRACE"/>
+                    <logger name="io.gatling.http.response" level="TRACE"/>
+
+                    <root level="TRACE">
+                        <appender-ref ref="CONSOLE"/>
+                        <appender-ref ref="FILE" />
+                    </root>
+                </then>
+                <else>
+                    <if condition='property("gatling.runMode").contains("info")'>
+                        <then>
+                            <logger name="io.gatling.http.ahc" level="INFO"/>
+                            <logger name="io.gatling.http.response" level="INFO"/>
+
+                            <root level="INFO">
+                                <appender-ref ref="CONSOLE"/>
+                                <appender-ref ref="FILE" />
+                            </root>
+                        </then>
+                    </if>
+                </else>
+            </if>
+        </else>
+
+    </if>
+
+
+</configuration>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>gatling</groupId>
+    <artifactId>examples</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Plugins versions -->
+        <scala-maven-plugin.version>3.2.2</scala-maven-plugin.version>
+        <scala.version>2.11.8</scala.version>
+        <scala.binary.version>2.11</scala.binary.version>
+        <gatling-plugin.version>2.2.4</gatling-plugin.version>
+
+        <!-- Libraries versions -->
+        <gatling.version>2.2.5</gatling.version>
+        <slf4j-api.version>1.7.25</slf4j-api.version>
+        <org.codehaus.janino.version>2.6.1</org.codehaus.janino.version>
+
+        <!-- Variables -->
+        <gatling.noReports>true</gatling.noReports>
+        <gatling.totalUser>1</gatling.totalUser>
+        <gatling.totalTime>1</gatling.totalTime>
+        <gatling.URL>"https://gatling.io/"</gatling.URL>
+        <gatling.runMode>info</gatling.runMode>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.gatling.highcharts</groupId>
+            <artifactId>gatling-charts-highcharts</artifactId>
+            <version>${gatling.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.janino</groupId>
+            <artifactId>janino</artifactId>
+            <version>${org.codehaus.janino.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src/main/scala</sourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <version>${scala-maven-plugin.version}</version>
+                <configuration>
+                    <scalaCompatVersion>${scala.binary.version}</scalaCompatVersion>
+                    <scalaVersion>${scala.version}</scalaVersion>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>scala-compile-first</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>scala-test-compile</id>
+                        <phase>process-test-resources</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>io.gatling</groupId>
+                <artifactId>gatling-maven-plugin</artifactId>
+                <version>${gatling-plugin.version}</version>
+                <configuration>
+                    <configFolder>${project.basedir}/src/main/resources</configFolder>
+                    <dataFolder>${project.basedir}/src/test/resources/data</dataFolder>
+                    <bodiesFolder>${project.basedir}/src/test/resources/bodies</bodiesFolder>
+                    <simulationsFolder>${project.basedir}/src/main/scala</simulationsFolder>
+                    <noReports>${gatling.noReports}</noReports>
+                    <jvmArgs>
+                        <jvmArg>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</jvmArg>
+                    </jvmArgs>
+                    <zincJvmArgs>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</zincJvmArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
