@@ -25,11 +25,13 @@
         <org.codehaus.janino.version>2.6.1</org.codehaus.janino.version>
 
         <!-- Variables -->
-        <gatling.noReports>true</gatling.noReports>
-        <gatling.totalUser>1</gatling.totalUser>
-        <gatling.totalTime>1</gatling.totalTime>
-        <gatling.URL>"https://gatling.io/"</gatling.URL>
-        <gatling.runMode>info</gatling.runMode>
+        <noReports>true</noReports>
+        <totalUser>1</totalUser>
+        <totalTime>1</totalTime>
+        <pauseTimeMin>1</pauseTimeMin>
+        <pauseTimeMax>5</pauseTimeMax>
+        <URL>https://gatling.io</URL>
+        <runMode>info</runMode>
     </properties>
 
     <dependencies>
@@ -110,9 +112,15 @@
                     <dataFolder>${project.basedir}/src/test/resources/data</dataFolder>
                     <bodiesFolder>${project.basedir}/src/test/resources/bodies</bodiesFolder>
                     <simulationsFolder>${project.basedir}/src/main/scala</simulationsFolder>
-                    <noReports>${gatling.noReports}</noReports>
+                    <noReports>${noReports}</noReports>
                     <jvmArgs>
                         <jvmArg>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</jvmArg>
+                        <jvmArg>-DtotalUser=${totalUser}</jvmArg>
+                        <jvmArg>-DtotalTime=${totalTime}</jvmArg>
+                        <jvmArg>-DpauseTimeMin=${pauseTimeMin}</jvmArg>
+                        <jvmArg>-DpauseTimeMax=${pauseTimeMax}</jvmArg>
+                        <jvmArg>-DURL=${URL}</jvmArg>
+                        <jvmArg>-DrunMode=${runMode}</jvmArg>
                     </jvmArgs>
                     <zincJvmArgs>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</zincJvmArgs>
                 </configuration>

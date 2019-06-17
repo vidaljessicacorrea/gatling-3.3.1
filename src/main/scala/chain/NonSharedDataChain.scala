@@ -6,8 +6,10 @@ import io.gatling.http.Predef._
 
 object NonSharedDataChain extends ChainTest {
 
+  private val GET_DOC_CURRENT = "/docs/current/"
+
   private val getPage = exec(http("GET " + "${record}")
-    .get("${record}"))
+    .get(GET_DOC_CURRENT + "${record}"))
 
   val scnFlattenFeederIntoAtributtes = foreach(FeedersFiles.userGuideRecords, "record") {
       exec(flattenMapIntoAttributes("${record}"))

@@ -11,5 +11,5 @@ Here you will find some examples of how to use gatling. If you have any question
 ### [Scenario](readme/scenarios.md)
 ### [Feeders](readme/feeders.md)
 ### [Checks](readme/checks.md)
-### [Simulation Setup](readme/simulations.md)
+### [Simulation Injections](readme/simulations.md)
 ### [Configuration](readme/configurations.md)

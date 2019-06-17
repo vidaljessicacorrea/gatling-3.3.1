@@ -10,7 +10,7 @@ object LoggerChain extends ChainTest {
   private val getLogger : ChainBuilder = {
     exec(session =>{
       val url = "********************************"+session("DATE").as[String]+"**************************"
-      consoleLogger.debug(url)
+      fileLogger.info(url)
       session
     }
     )

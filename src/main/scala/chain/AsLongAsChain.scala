@@ -20,7 +20,7 @@ object AsLongAsChain extends ChainTest {
   val getAsLongAs = asLongAs(session => numIncremetal.intValue() != 10){
         exec(setSequenceNumber(numIncremetal))
           .exec(session => {
-            println(numIncremetal.intValue())
+            consoleLogger.info("[INCREMENT: " + numIncremetal.intValue() + "]")
             session
           })
           .exec(goHomePage)

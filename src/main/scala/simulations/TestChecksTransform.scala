@@ -10,7 +10,7 @@ class TestChecksTransform extends BaseSimulation {
 
   setUp(
 
-    ScenarioTest.getTransform.inject(constantUsersPerSec(usersPerSec) during (totalTimeMin.toInt minutes))
+    ScenarioTest.getTransform.inject(atOnceUsers(totalUsers))
 
   ).protocols(httpConf)
 }

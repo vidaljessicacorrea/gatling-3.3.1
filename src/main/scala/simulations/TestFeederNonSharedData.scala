@@ -12,5 +12,5 @@ class TestFeederNonSharedData extends BaseSimulation {
 
     ScenarioTest.getNonSharedData.inject(constantUsersPerSec(usersPerSec) during (totalTimeMin.toInt minutes))
 
-  ).protocols(httpConfWithInferHtmlResources)
+  ).protocols(httpConf)
 }

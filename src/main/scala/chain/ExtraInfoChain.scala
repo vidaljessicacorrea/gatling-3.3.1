@@ -6,7 +6,7 @@ import io.gatling.http.Predef._
 
 object ExtraInfoChain extends ChainTest {
 
-  val extraInfo = exec(http("request_2")
+  val extraInfo = exec(http("GET " + baseUrl)
       .get(baseUrl)
       .extraInfoExtractor { extraInfo => List(BaseLogger.loggerInfo(extraInfo)) })
 }
