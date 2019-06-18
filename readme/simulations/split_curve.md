@@ -1,4 +1,4 @@
-###Split Simulations
+### Split Simulations
 Documentation from (https://gatling.io/docs/2.3/general/simulation_setup/)
 
 To launch these simulations 

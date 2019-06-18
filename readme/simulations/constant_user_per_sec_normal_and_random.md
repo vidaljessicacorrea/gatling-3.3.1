@@ -1,4 +1,4 @@
-###Constant User Per Sec Normal and Random
+### Constant User Per Sec Normal and Random
 Documentation from (https://gatling.io/docs/2.3/general/simulation_setup/)
 
 To launch this simulation 
@@ -16,7 +16,7 @@ Users will be injected at regular intervals.
 ![Simulation ConstantUserPerSecNormal](img/CurveConstantUserPerSecNormal.png)
 
 
-###Constant User Per Sec Random
+### Constant User Per Sec Random
 Documentation from (https://gatling.io/docs/2.3/general/simulation_setup/)
 
 To launch this simulation 

@@ -1,4 +1,4 @@
-###rampUsersPerSec using randomized
+### rampUsersPerSec using randomized
 Documentation from (https://gatling.io/docs/2.3/general/simulation_setup/#injection)
 To launch these simulations 
 See example: `TestInjectionRampRandom`
@@ -16,7 +16,7 @@ ScenarioTest.scn.inject(rampUsersPerSec(2) to (10) during(3 minutes) randomized)
 ![random](img/random.png)
 
 
-###rampUsersPerSec not using random
+### rampUsersPerSec not using random
 Documentation from (https://gatling.io/docs/2.3/general/simulation_setup/#injection)
 
 To launch these simulations 
