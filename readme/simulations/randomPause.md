@@ -1,16 +1,21 @@
-Random pause between two durations
-==========================
+### Random pause between two durations
 
-documentation from (https://gatling.io/docs/2.3/general/scenario/?highlight=pause#pause)
+Documentation from (https://gatling.io/docs/2.3/general/simulation_setup/)
 
-To launch this simulation go to ([RandomPause](https://bitbucket.adessa.cl/projects/PERF/repos/performance-gatling-examples/browse/src/main/gatling/simulations/SimulationRandomPause.scala))
+To launch these simulations 
+See example: `TestInjectionRandomPause`
 
-To run the simulation use:
+To run the simulation you can use
+`mvn gatling:execute -Dgatling.simulationClass=simulations.TestInjectionRandomPause`
 
+The values for pauseTimeMin and pauseTimeMax are by default defined on the pom file. 
 ```
-mvn gatling:execute -Dgatling.simulationClass=simulations.SimulationRandomPause -Dgatling.URL="http://www.sodimac.cl/sodimac-cl/" -Dgatling.totalUser=60 -Dgatling.totalTime=1  -DrunMode=test -Dgatling.pauseTimeMin=1` `-Dgatling.pauseTimeMax=10
+ <pauseTimeMin>1</pauseTimeMin>
+ <pauseTimeMax>5</pauseTimeMax>
 ```
-add `-Dgatling.pauseTimeMin=1` `-Dgatling.pauseTimeMax=10`
+
+Ìf you want to change them , you need to modify the command adding them
+`mvn gatling:execute -Dgatling.simulationClass=simulations.TestInjectionRandomPause -DpauseTimeMin=2 -DpauseTimeMax=10`
 
 
 Here we define a method to add a random pause. You must insert time max and min. 

@@ -1,9 +1,8 @@
-Throughput Based Tests Curve
-============================
+### Throughput Based Tests Curve
+Documentation from (https://gatling.io/docs/2.3/general/simulation_setup/)
 
-documentation from (https://gatling.io/docs/2.3/general/simulation_setup/)
-
-To launch this simulation go to ([FalabellaCyberCurve](https://bitbucket.adessa.cl/projects/PERF/repos/performance-gatling-examples/browse/src/main/gatling/simulations/ThroughputBasedTests.scala))
+To launch these simulations 
+See example: `TestInjectionThroughputBased`
 
 
 Here we try to show a simulation where we used Throttling.
@@ -34,4 +33,4 @@ holdFor(duration)
 ```
 this function hold the current throughput for a given duration.
 
-![Simulation Curve2](../src/test/resources/img/ThroughputBasedTestsCurve.png)
+![Simulation Curve2](img/ThroughputBasedTestsCurve.png)
