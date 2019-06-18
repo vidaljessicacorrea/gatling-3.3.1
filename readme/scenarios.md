@@ -19,7 +19,7 @@
     See example `simulations/TestConditionalsSwitchOrElse`
 
 ##### 3. Protocol definition
-* [Configure http protocols](readme/configurations/configure_http_protocols.md)
+* [Configure http protocols](configurations/configure_http_protocols.md)
 
 * [Infer Html Resources White And Black List](https://gatling.io/docs/2.3/http/http_protocol/?highlight=inferhtmlresources)
     See example `simulations/TestProtocolsInferHtmlResourcesWhiteAndBlackList`

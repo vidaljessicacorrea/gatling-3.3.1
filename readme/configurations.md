@@ -1,6 +1,6 @@
 ### Configurations
 
-#### A) [Http Protocol](readme/configurations/configure_http_procols.md) 
+#### A) [Http Protocol](configurations/configure_http_procols.md) 
 
 * [Extract Extra Info from request](https://gatling.io/docs/2.3/http/http_protocol/#dumping-custom-data)
 
