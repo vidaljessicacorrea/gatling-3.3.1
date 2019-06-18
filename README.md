@@ -5,7 +5,7 @@ Here you will find some examples of how to use gatling. If you have any question
 
 ## How to run test
 
-     gatling:execute -Dgatling.simulationClass=[Simulation path] -Dgatling.URL="[URL BASE]" -Dgatling.totalUser=[users per second] -Dgatling.totalTime=[time in minutes]  -DrunMode=[trace,debug,info,test]
+     gatling:execute -Dgatling.simulationClass=[Simulation path] -DURL="[URL BASE]" -DtotalUser=[users per second] -DtotalTime=[time in minutes]  -DrunMode=[trace,debug,info,test]
 
 ## Examples
 ### [Scenario](readme/scenarios.md)
