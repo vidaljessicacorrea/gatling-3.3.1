@@ -5,11 +5,7 @@ Here you will find some examples of how to use gatling. If you have any question
 
 ## How to run test
 
-     gatling:execute -Dgatling.simulationClass=[Simulation path] -DURL="[URL BASE]" -DtotalUser=[users per second] -DtotalTime=[time in minutes]  -DrunMode=[trace,debug,info,test]
-
-## Examples
-### [Scenario](readme/scenarios.md)
-### [Feeders](readme/feeders.md)
-### [Checks](readme/checks.md)
-### [Simulation Injections](readme/simulations.md)
-### [Configuration](readme/configurations.md)
+    mvn gatling:test
+    
+    mvn gatling:test -Dgatling.simulationClass=computerdatabase.BasicSimulation
+    

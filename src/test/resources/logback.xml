@@ -8,27 +8,13 @@
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%-5level] %logger{15} - %msg%n%rEx</pattern>
         </encoder>
-    </appender>
-    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-        <file>${USER_HOME}/gatling-log-${bySecond}.log</file>
-        <append>false</append>
-        <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%-5level] %logger{15} - %msg%n%rEx</pattern>
-        </encoder>
+        <immediateFlush>false</immediateFlush>
     </appender>
 
     <logger name="ConsoleLogger" additivity="false">
+        <level value="INFO"/>
         <appender-ref ref="CONSOLE"/>
     </logger>
-
-    <logger name="FileLogger" additivity="false">
-        <appender-ref ref="FILE"/>
-    </logger>
-
-    <root level="INFO">
-        <appender-ref ref="CONSOLE"/>
-        <appender-ref ref="FILE" />
-    </root>
 
     <if condition='property("runMode").contains("debug")'>
         <then>

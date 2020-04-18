@@ -15,22 +15,22 @@
 
         <!-- Plugins versions -->
         <scala-maven-plugin.version>3.2.2</scala-maven-plugin.version>
-        <scala.version>2.11.8</scala.version>
-        <scala.binary.version>2.11</scala.binary.version>
-        <gatling-plugin.version>2.2.4</gatling-plugin.version>
+        <scala.version>2.12.10</scala.version>
+        <scala.binary.version>2.12.10</scala.binary.version>
+        <gatling-plugin.version>3.0.5</gatling-plugin.version>
 
         <!-- Libraries versions -->
-        <gatling.version>2.2.5</gatling.version>
+        <gatling.version>3.3.1</gatling.version>
         <slf4j-api.version>1.7.25</slf4j-api.version>
         <org.codehaus.janino.version>2.6.1</org.codehaus.janino.version>
 
         <!-- Variables -->
-        <noReports>true</noReports>
+        <noReports>false</noReports>
         <totalUser>1</totalUser>
         <totalTime>1</totalTime>
         <pauseTimeMin>1</pauseTimeMin>
         <pauseTimeMax>5</pauseTimeMax>
-        <URL>https://gatling.io</URL>
+        <URL>http://computer-database.gatling.io</URL>
         <runMode>info</runMode>
     </properties>
 
@@ -108,10 +108,10 @@
                 <artifactId>gatling-maven-plugin</artifactId>
                 <version>${gatling-plugin.version}</version>
                 <configuration>
-                    <configFolder>${project.basedir}/src/main/resources</configFolder>
-                    <dataFolder>${project.basedir}/src/test/resources/data</dataFolder>
-                    <bodiesFolder>${project.basedir}/src/test/resources/bodies</bodiesFolder>
+                    <disableCompiler>false</disableCompiler>
                     <simulationsFolder>${project.basedir}/src/main/scala</simulationsFolder>
+                    <resourcesFolder>${project.basedir}/src/test/resources</resourcesFolder>
+                    <resultsFolder>${project.basedir}/target/gatling</resultsFolder>
                     <noReports>${noReports}</noReports>
                     <jvmArgs>
                         <jvmArg>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</jvmArg>
@@ -122,7 +122,6 @@
                         <jvmArg>-DURL=${URL}</jvmArg>
                         <jvmArg>-DrunMode=${runMode}</jvmArg>
                     </jvmArgs>
-                    <zincJvmArgs>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</zincJvmArgs>
                 </configuration>
             </plugin>
         </plugins>
