@@ -6,5 +6,5 @@ import io.gatling.core.feeder._
 object FeedersFiles {
 
   val keywords = csv(FeederNames.KEYWORDS).circular
-  val companies = csv(FeederNames.COMPANIES).random
+  val companies = csv(FeederNames.COMPANIES).circular
 }

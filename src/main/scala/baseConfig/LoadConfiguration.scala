@@ -1,5 +1,6 @@
 package baseConfig
 
+
 object LoadConfiguration extends CustomLogging{
 
   val totalUsers = System.getProperty("gatling.totalUsers").toInt
@@ -7,6 +8,8 @@ object LoadConfiguration extends CustomLogging{
   val baseUrl = System.getProperty("gatling.url")
   val usersPerSec = totalUsers / totalTimeMin
   val pauseTime = System.getProperty("gatling.pause").toInt
+  val gatlingResourceFolder = "src/test/resources/data/"
+
 
   consoleLogger.info("############################################")
   consoleLogger.info("# Web Simulation Parameters ")
@@ -15,4 +18,5 @@ object LoadConfiguration extends CustomLogging{
   consoleLogger.info("# Total Time: %s min".format(totalTimeMin))
   consoleLogger.info("# Users per sec: %s".format(usersPerSec))
   consoleLogger.info("############################################")
+
 }

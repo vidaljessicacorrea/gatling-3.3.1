@@ -7,5 +7,5 @@ Here you will find some examples of how to use gatling. If you have any question
 
     mvn gatling:test
     
-    mvn gatling:test -Dgatling.simulationClass=computerdatabase.BasicSimulation
+    mvn gatling:test -Dgatling.simulationClass=simulation.BasicSimulation
     

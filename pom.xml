@@ -26,12 +26,6 @@
 
         <!-- Variables -->
         <noReports>false</noReports>
-        <totalUser>1</totalUser>
-        <totalTime>1</totalTime>
-        <pauseTimeMin>1</pauseTimeMin>
-        <pauseTimeMax>5</pauseTimeMax>
-        <URL>http://computer-database.gatling.io</URL>
-        <runMode>info</runMode>
     </properties>
 
     <dependencies>
@@ -61,23 +55,6 @@
     <build>
         <sourceDirectory>src/main/scala</sourceDirectory>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                        <configuration>
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
@@ -113,15 +90,6 @@
                     <resourcesFolder>${project.basedir}/src/test/resources</resourcesFolder>
                     <resultsFolder>${project.basedir}/target/gatling</resultsFolder>
                     <noReports>${noReports}</noReports>
-                    <jvmArgs>
-                        <jvmArg>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</jvmArg>
-                        <jvmArg>-DtotalUser=${totalUser}</jvmArg>
-                        <jvmArg>-DtotalTime=${totalTime}</jvmArg>
-                        <jvmArg>-DpauseTimeMin=${pauseTimeMin}</jvmArg>
-                        <jvmArg>-DpauseTimeMax=${pauseTimeMax}</jvmArg>
-                        <jvmArg>-DURL=${URL}</jvmArg>
-                        <jvmArg>-DrunMode=${runMode}</jvmArg>
-                    </jvmArgs>
                 </configuration>
             </plugin>
         </plugins>

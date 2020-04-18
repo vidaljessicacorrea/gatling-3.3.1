@@ -1,4 +1,4 @@
-COMPANY_ID,COMPANY_NAME 
+COMPANY_ID,COMPANY_NAME
 2,Thinking Machines
 3,RCA
 4,Netronics
@@ -41,5 +41,4 @@ COMPANY_ID,COMPANY_NAME
 41,HTC Corporation
 42,Research In Motion
 43,Samsung Electronics
-            
-        
+
